@@ -1,0 +1,44 @@
+# ===========================
+#   CONFIG & FICHIERS SENSIBLES
+# ===========================
+.env
+config.php
+pgsql.php
+mdp.php
+
+# ===========================
+#   IMAGES & MÉDIAS LOCAUX
+# ===========================
+images/joueur/*
+!images/joueur/default_player.png
+
+images/flags/*
+!images/flags/.keep
+
+images/equipe/*
+!images/equipe/.keep
+
+# ===========================
+#  CACHE / LOGS / TEMPORAIRES
+# ===========================
+*.log
+*.tmp
+*.bak
+*.swp
+
+# ===========================
+#   FICHIERS OS / ÉDITEURS
+# ===========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ===========================
+#   DÉPENDANCES / ARCHIVES
+# ===========================
+vendor/
+node_modules/
+*.zip
+*.rar
+*.7z
