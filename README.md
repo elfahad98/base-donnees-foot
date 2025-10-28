@@ -108,7 +108,7 @@ Si les dossiers sont vides, ajoutez un fichier vide `.gitkeep` pour les conserve
 
 ## 👤 Auteur
 
-Projet réalisé par **COMBO El-Fahad** – Université de Caen (2025).  
+Projet réalisé par **COMBO El-Fahad** – Université de Caen (2024).  
 Contact : `el-fahad.combo@etu.unicaen.fr`
 
 ---
