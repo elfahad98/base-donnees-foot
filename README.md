@@ -1,16 +1,15 @@
-# Base de données – Top joueurs de football (PHP + PostgreSQL)
+# Base de données – joueurs de football (PHP + PostgreSQL)
 
-Application web simple pour **gérer une base de joueurs** : ajout, filtrage, détails, suppression, pagination.
+Application web pour **gérer une base de joueurs** : ajout, filtrage, détails, suppression et pagination.
 
-- **Démo (hébergée Univ.)** : https://dev-****.users.info.unicaen.fr/BD_Foot/controller.php  
 - **Stack** : PHP • PostgreSQL • HTML/CSS  
 - **Licence** : MIT
 
 ---
 
-## Fonctionnalités
+##  Fonctionnalités
 
-- Ajout d’un joueur (formulaire).
+- Ajout d’un joueur via formulaire.
 - Recherche/filtrage par **nom, prénom, genre, position, équipe** (combinaisons possibles).
 - Table **paginée** avec conservation des filtres.
 - Fiche **détaillée** (photo, drapeau, infos) + **suppression**.
@@ -18,44 +17,121 @@ Application web simple pour **gérer une base de joueurs** : ajout, filtrage, d�
 
 ---
 
-## Structure du projet
+##  Structure du projet
 
+```
 base-donnees-foot/
 ├─ public/
-│ ├─ controller.php 
-│ ├─ go.html
-│ ├─ gostyle.css 
-│ ├─ images/
-│ │ ├─ flags/ # drapeaux (.png)
-│ │ ├─ équipe/ # logos d’équipe (.png)
-│ │ └─ joueur/ # photos/avatars joueurs (.png)
+│  ├─ controller.php
+│  ├─ go.html
+│  ├─ gostyle.css
+│  └─ images/
+│     ├─ flags/      # drapeaux (.png)
+│     ├─ équipe/     # logos d’équipe (.png)  
+│     └─ joueur/     # photos/avatars joueurs (.png)
 ├─ sql/
-│ └─ table.sql # création/jeu d’exemple de la table
+│  └─ table.sql      # création/jeu d’exemple de la table
 ├─ .gitignore
 ├─ LICENSE
 └─ README.md
+```
 
+
+##  Installation locale (rapide)
+
+### 1) Prérequis
+- PHP et PostgreSQL installés.
+
+### 2) Cloner
+```sh
+git clone https://github.com/elfahad98/base-donnees-foot.git
+cd base-donnees-foot
+```
+
+### 3) Base de données
+Créez la base et exécutez le script :
+```sh
+psql -U <user_pg> -d postgres -c "CREATE DATABASE foot;"
+psql -U <user_pg> -d foot -f sql/table.sql
+```
+
+### 4) Connexion PostgreSQL 
+Créez **`public/pgsql.php`** avec vos identifiants :
+```php
+<?php
+// public/pgsql.php
+$conn = pg_connect("host=localhost dbname=foot user=<user> password=<password>");
+if (!$conn) { die('Connexion PostgreSQL échouée : ' . pg_last_error()); }
+```
+Assurez-vous que `.gitignore` contient :
+```
+public/pgsql.php
+.env
+```
+
+### 5) Lancer
+```sh
+php -S localhost:8000 -t public
+```
+Puis ouvrez : `http://localhost:8000/controller.php`
 
 ---
 
-## Installation locale (rapide)
+##  Utilisation
 
-1. **Prérequis** : PHP et PostgreSQL .
-2. **Base** : créez une base (ex. `foot`) puis exécutez `sql/table.sql`.
-3. **Connexion PostgreSQL** : créez **`public/pgsql.php`** (ne pas versionner) :
-   ```php
-   <?php
-   // public/pgsql.php
-   $conn = pg_connect("host=localhost dbname=foot user=<user> password=<password>");
-   if (!$conn) { die('Connexion PostgreSQL échouée : ' . pg_last_error()); }
+- **Ajouter** : remplir le formulaire → **+ Ajouter un joueur**  
+- **Rechercher** : renseigner un ou plusieurs critères → **Rechercher**  
+- **Détails statistique** : cliquer sur la **photo** dans la table  
+- **Supprimer** : bouton dédié dans la fiche détaillée  
+
+---
+
+##  Images (noms attendus)
+
+Le code tente de charger automatiquement des images si elles existent :
+
+- **Joueur** : `public/images/joueur/nom_prenom.png`  
+  _ex._ `mbappe_kylian.png`
+- **Équipe** : `public/images/equipe/nom_du_club.png`  
+  _ex._ `paris_saint-germain.png`
+- **Drapeau** : `public/images/flags/nationalite.png`  
+  _ex._ `francais.png`, `bresilien.png`
+
+**Règles** : tout en minuscules, espaces → `_`, extension `.png`.  
+Des *placeholders* sont utilisés si l’image manque (ex. `default_player.png`, `default.png`).  
+Si les dossiers sont vides, ajoutez un fichier vide `.gitkeep` pour les conserver dans Git.
+
+---
 
 
-php -S localhost:8000 -t public
+##  Captures (optionnel)
 
+Ajoutez vos captures dans `docs/screenshots/` puis référencez-les ici :
 
-## Utilisation
+```markdown
+![Liste joueurs](docs/screenshots/list.png)
+![Fiche joueur](docs/screenshots/details.png)
+```
 
-Ajouter : remplir le formulaire → + Ajouter un joueur.
-Rechercher : renseigner un ou plusieurs critères → Rechercher.
-Détails : cliquer sur la photo dans la table.
-Supprimer : bouton dans la fiche détaillée.
+---
+
+## 🗺️ Roadmap (idées)
+
+- Requêtes préparées (`pg_query_params`) & validation serveur  
+- Édition/mise à jour d’un joueur  
+- Export CSV  
+- Authentification (admin)  
+- Docker Compose (php + postgres)  
+
+---
+
+## 👤 Auteur
+
+Projet réalisé par **COMBO El-Fahad** – Université de Caen (2025).  
+Contact : `el-fahad.combo@etu.unicaen.fr`
+
+---
+
+## 📄 Licence
+
+Ce projet est sous licence **MIT**. Voir le fichier `LICENSE`.
