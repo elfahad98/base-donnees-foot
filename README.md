@@ -104,15 +104,6 @@ Si les dossiers sont vides, ajoutez un fichier vide `.gitkeep` pour les conserve
 ---
 
 
-##  Captures (optionnel)
-
-Ajoutez vos captures dans `docs/screenshots/` puis référencez-les ici :
-
-```markdown
-![Liste joueurs](screenshots/accueil.png)
-![Fiche joueur](screenshots/details.png)
-```
-
 ---
 
 ## 👤 Auteur
