@@ -109,19 +109,9 @@ Si les dossiers sont vides, ajoutez un fichier vide `.gitkeep` pour les conserve
 Ajoutez vos captures dans `docs/screenshots/` puis référencez-les ici :
 
 ```markdown
-![Liste joueurs](docs/screenshots/list.png)
-![Fiche joueur](docs/screenshots/details.png)
+![Liste joueurs](screenshots/accueil.png)
+![Fiche joueur](screenshots/details.png)
 ```
-
----
-
-## 🗺️ Roadmap (idées)
-
-- Requêtes préparées (`pg_query_params`) & validation serveur  
-- Édition/mise à jour d’un joueur  
-- Export CSV  
-- Authentification (admin)  
-- Docker Compose (php + postgres)  
 
 ---
 
