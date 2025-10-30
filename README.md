@@ -37,6 +37,22 @@ base-donnees-foot/
 ```
 
 
+
+## Visualisations (aperçu)
+
+> Place tes captures dans `docs/screenshots/`.
+
+| Capture | Commentaire |
+|---|---|
+| ![Accueil — liste paginée](screenshots/accueil.png) | Accueil avec **table paginée** et **filtres** conservés. |
+| ![Ajout — succès](screenshots/ajout.png) | Formulaire **d’ajout** de joueur + **message de succès**. |
+| ![Fiche détaillée](screenshots/details.png) | **Carte détaillée** (photo, drapeau, âge, taille, poids, équipe) + bouton **Supprimer**. |
+| ![Suppression — succès](screenshots/suppression.png) | **Confirmation** après **suppression** d’un joueur. |
+
+---
+
+
+
 ##  Installation locale (rapide)
 
 ### 1) Prérequis
