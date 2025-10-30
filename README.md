@@ -62,34 +62,24 @@ base-donnees-foot/
 ```sh
 git clone https://github.com/elfahad98/base-donnees-foot.git
 cd base-donnees-foot
-```
 
-### 3) Base de données
-Créez la base et exécutez le script :
-```sh
+### Créez la base et exécutez le script
+
 psql -U <user_pg> -d postgres -c "CREATE DATABASE foot;"
 psql -U <user_pg> -d foot -f sql/table.sql
-```
 
-### 4) Connexion PostgreSQL 
+### Créez **`public/pgsql.php`** avec vos identifiants 
 Créez **`public/pgsql.php`** avec vos identifiants :
-```php
+
 <?php
 // public/pgsql.php
 $conn = pg_connect("host=localhost dbname=foot user=<user> password=<password>");
 if (!$conn) { die('Connexion PostgreSQL échouée : ' . pg_last_error()); }
-```
-Assurez-vous que `.gitignore` contient :
-```
-public/pgsql.php
-.env
-```
 
-### 5) Lancer
-```sh
+### Lancer
 php -S localhost:8000 -t public
-```
 Puis ouvrez : `http://localhost:8000/controller.php`
+```
 
 ---
 
