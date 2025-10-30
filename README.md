@@ -47,7 +47,7 @@ base-donnees-foot/
 
 ---
 
-##  Images (noms attendus)
+##  Images 
 
 Le code tente de charger automatiquement des images si elles existent :
 
@@ -64,7 +64,6 @@ Si les dossiers sont vides, ajoutez un fichier vide `.gitkeep` pour les conserve
 
 ## Visualisations (aperçu)
 
-> Place tes captures dans `docs/screenshots/`.
 
 | Capture | Commentaire |
 |---|---|
