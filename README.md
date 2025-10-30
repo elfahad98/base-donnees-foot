@@ -62,7 +62,7 @@ Le code tente de charger automatiquement des images si elles existent :
 Des *placeholders* sont utilisés si l’image manque (ex. `default_player.png`, `default.png`).  
 
 ## Visualisations (aperçu)
-\\
+\
 
 | Capture | Commentaire |
 |---|---|
@@ -75,8 +75,8 @@ Des *placeholders* sont utilisés si l’image manque (ex. `default_player.png`,
 
 
 
-##  Installation locale (rapide)
-\\
+##  Installation locale (rapide) \\
+
 ```sh
 git clone https://github.com/elfahad98/base-donnees-foot.git
 cd base-donnees-foot
