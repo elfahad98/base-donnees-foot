@@ -45,7 +45,7 @@ base-donnees-foot/
 | Capture | Commentaire |
 |---|---|
 | ![Accueil — liste paginée](screenshots/accueil.png) | Accueil avec **table paginée** et **filtres** conservés. |
-| ![Ajout — succès](screenshots/ajout.png) | Formulaire **d’ajout** de joueur + **message de succès**. |
+| ![Ajout — succès](screenshots/ajout.png) | **Confirmation** après **ajout** d’un joueur.  |
 | ![Fiche détaillée](screenshots/details.png) | **Carte détaillée** (photo, drapeau, âge, taille, poids, équipe) + bouton **Supprimer**. |
 | ![Suppression — succès](screenshots/suppression.png) | **Confirmation** après **suppression** d’un joueur. |
 
