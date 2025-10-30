@@ -60,7 +60,6 @@ Le code tente de charger automatiquement des images si elles existent :
 
 **Règles** : tout en minuscules, espaces → `_`, extension `.png`.  
 Des *placeholders* sont utilisés si l’image manque (ex. `default_player.png`, `default.png`).  
-Si les dossiers sont vides, ajoutez un fichier vide `.gitkeep` pour les conserver dans Git.
 
 ## Visualisations (aperçu)
 
